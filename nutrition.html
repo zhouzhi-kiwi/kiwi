@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwi Nutrition</title>
+    <!-- Use the same Tailwind CDN and base styles as the home page -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+          Arial, sans-serif;
+        background-color: #ffffff;
+      }
+      .nav-link {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #000;
+      }
+      .feature-card {
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+      }
+      .feature-card:hover img {
+        transform: scale(1.1);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .lang-toggle {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body class="antialiased text-gray-900 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-12 space-x-4 md:space-x-6">
+          <a href="index.html" class="text-gray-800 hover:text-black flex items-center flex-shrink-0" aria-label="Zhouzhi Kiwi home">
+            <img src="assets/zhouzhi-kiwi-logo.svg" alt="周至猕猴桃" class="h-8 w-auto" />
+          </a>
+          <a href="nutrition.html" class="nav-link hidden md:inline-block" data-i18n="nav.nutrition"></a>
+          <a href="benefits.html" class="nav-link hidden md:inline-block" data-i18n="nav.benefits"></a>
+          <a href="products.html" class="nav-link hidden md:inline-block" data-i18n="nav.products"></a>
+          <a href="recipes.html" class="nav-link hidden md:inline-block" data-i18n="nav.recipes"></a>
+          <a href="sustainability.html" class="nav-link hidden md:inline-block" data-i18n="nav.sustainability"></a>
+          <a href="about.html" class="nav-link hidden md:inline-block" data-i18n="nav.about"></a>
+          <a href="contact.html" class="nav-link hidden md:inline-block" data-i18n="nav.contact"></a>
+          <a href="community.html" class="nav-link hidden md:inline-block" data-i18n="nav.community"></a>
+          <a href="support.html" class="nav-link hidden md:inline-block" data-i18n="nav.support"></a>
+          <button id="lang-toggle" class="nav-link lang-toggle px-2 py-1 border rounded text-sm"></button>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <section class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black mb-4 fade-in" data-i18n="nutrition.hero.title"></h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto fade-in" data-i18n="nutrition.hero.subtitle"></p>
+      </section>
+      <!-- Nutrition Facts Section -->
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 fade-in">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-black mb-4" data-i18n="nutrition.section1.title"></h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200 text-sm">
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.calories"></td>
+                <td class="py-2" data-i18n="nutrition.table.calories.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.carbs"></td>
+                <td class="py-2" data-i18n="nutrition.table.carbs.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.fiber"></td>
+                <td class="py-2" data-i18n="nutrition.table.fiber.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.vitaminC"></td>
+                <td class="py-2" data-i18n="nutrition.table.vitaminC.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.vitaminK"></td>
+                <td class="py-2" data-i18n="nutrition.table.vitaminK.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.vitaminE"></td>
+                <td class="py-2" data-i18n="nutrition.table.vitaminE.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.potassium"></td>
+                <td class="py-2" data-i18n="nutrition.table.potassium.value"></td>
+              </tr>
+              <tr>
+                <td class="font-medium pr-4 py-2" data-i18n="nutrition.table.folate"></td>
+                <td class="py-2" data-i18n="nutrition.table.folate.value"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="text-xl font-semibold text-black mt-8" data-i18n="nutrition.notes.title"></h3>
+        <ul class="list-disc list-inside text-gray-800 mt-2 space-y-1">
+          <li data-i18n="nutrition.notes.fact1"></li>
+          <li data-i18n="nutrition.notes.fact2"></li>
+          <li data-i18n="nutrition.notes.fact3"></li>
+        </ul>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

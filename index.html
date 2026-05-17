@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwi Pro</title>
+    <!--
+      We continue to use the Tailwind CDN so the look and feel of the original
+      single‑file mockup stays intact. Only minor custom styles are declared
+      below for the scroll animations and language toggle positioning.
+    -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      /* Bring over the same font and base styles from the original mockup. */
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+          Arial, sans-serif;
+        background-color: #ffffff;
+      }
+      .nav-link {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #000;
+      }
+
+      /* Interactive hover effects for the feature cards. Each card
+         subtly lifts and scales its icon when hovered to provide a more
+         engaging, dynamic feel without disturbing the original layout. */
+      .feature-card {
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+      }
+      .feature-card:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Custom animations for elements that should fade into view. */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* Utility to position the language toggle on the far right of the
+         navigation bar. Tailwind's flex utilities do most of the work,
+         but a little margin keeps the spacing consistent on small screens. */
+      .lang-toggle {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body class="antialiased text-gray-900 bg-white">
+    <!-- BEGIN: Navigation -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-12 space-x-4 md:space-x-6">
+          <!-- Brand icon stays unchanged -->
+          <a href="index.html" class="text-gray-800 hover:text-black flex items-center flex-shrink-0" aria-label="Zhouzhi Kiwi home">
+            <img src="assets/zhouzhi-kiwi-logo.svg" alt="周至猕猴桃" class="h-8 w-auto" />
+          </a>
+          <!-- Primary navigation items. Each item has a data‑i18n key so
+               our script can swap the displayed text when the user
+               toggles languages. -->
+          <!-- Update navigation links to point to their respective pages. -->
+          <a href="nutrition.html" class="nav-link hidden md:inline-block" data-i18n="nav.nutrition"></a>
+          <a href="benefits.html" class="nav-link hidden md:inline-block" data-i18n="nav.benefits"></a>
+          <a href="products.html" class="nav-link hidden md:inline-block" data-i18n="nav.products"></a>
+          <a href="recipes.html" class="nav-link hidden md:inline-block" data-i18n="nav.recipes"></a>
+          <a href="sustainability.html" class="nav-link hidden md:inline-block" data-i18n="nav.sustainability"></a>
+          <a href="about.html" class="nav-link hidden md:inline-block" data-i18n="nav.about"></a>
+          <a href="contact.html" class="nav-link hidden md:inline-block" data-i18n="nav.contact"></a>
+          <a href="community.html" class="nav-link hidden md:inline-block" data-i18n="nav.community"></a>
+          <a href="support.html" class="nav-link hidden md:inline-block" data-i18n="nav.support"></a>
+          <!-- Language toggle button. Clicking this switches between English
+               and Chinese. It lives at the far right via the lang‑toggle
+               utility class defined above. -->
+          <button
+            id="lang-toggle"
+            class="nav-link lang-toggle px-2 py-1 border rounded text-sm"
+          ></button>
+        </div>
+      </div>
+    </nav>
+    <!-- END: Navigation -->
+
+    <!-- BEGIN: Main Content -->
+    <main>
+      <!-- BEGIN: Hero Section -->
+      <section
+        class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto"
+      >
+        <h1
+          class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight text-black mb-4 fade-in"
+          data-i18n="hero.title"
+        ></h1>
+        <p
+          class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto fade-in"
+          data-i18n="hero.subtitle"
+        ></p>
+        <div class="flex items-center justify-center space-x-6 fade-in">
+          <a
+            href="contact.html"
+            class="text-base sm:text-lg md:text-xl text-blue-600 hover:underline"
+            data-i18n="hero.buy"
+          ></a>
+          <a
+            href="products.html"
+            class="text-base sm:text-lg md:text-xl text-blue-600 hover:underline flex items-center"
+          >
+            <span data-i18n="hero.learnMore"></span>
+            <span class="ml-1 text-sm pt-0.5">&gt;</span>
+          </a>
+        </div>
+      </section>
+      <!-- END: Hero Section -->
+
+      <!-- BEGIN: Product Image Section -->
+      <section
+        class="flex justify-center px-4 mb-24 overflow-hidden fade-in"
+      >
+        <div
+          class="relative w-full max-w-4xl h-[300px] md:h-[400px] rounded-t-[500px] overflow-hidden bg-white flex items-start justify-center"
+        >
+          <img
+            src="assets/kiwi-hero-semicircle.png"
+            alt="Realistic green kiwifruit cross section"
+            class="w-full h-full object-cover object-top"
+          />
+        </div>
+      </section>
+      <!-- END: Product Image Section -->
+
+      <!-- BEGIN: Features Section -->
+      <section
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 grid grid-cols-1 md:grid-cols-3 gap-12 text-center"
+      >
+        <!-- Feature 1 -->
+        <div class="flex flex-col items-center fade-in feature-card" data-feature="1">
+          <div class="w-16 h-16 mb-4 text-orange-400">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJVNjjYsbug0rx2nbasHTgqvX5leiYsQCganUe0x9n96PCG_tqikrTEvgP4DlPx-_dEa5ofrXBAp8iXSYd31z98G7pO6URlPrHasIFa1PrX5dLW-N38F1uVunrlbAWC4tL4oiI4jJAkOHOHXqy226cskEnQuc1ifGZOmYkkdrnl3qaxi_naz7sbHY0XHIsX-PFmT68oXEaLC-JrLA9ruIgWaubYXJCoUc5gdTxr9YNUl_O_KbYWzYgOQlI05lGQOv3zXqRX21eYJFJ"
+              alt="Orange slice icon"
+              class="w-full h-full object-contain mix-blend-multiply"
+            />
+          </div>
+          <h3
+            class="text-xl font-semibold text-black mb-2"
+            data-i18n="features.c.title"
+          ></h3>
+          <p
+            class="text-gray-800 text-sm leading-relaxed text-center"
+            data-i18n="features.c.desc"
+          ></p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="flex flex-col items-center fade-in feature-card" data-feature="2">
+          <div class="w-16 h-16 mb-4 text-green-500">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo9R8rPKpGld2fitS4PqGWU3-I02DWdR6CeGGk9H2l2Jb3tn2emqW36a2v0TS5CHHHJTvpCc4ERhAzxrI7qFI5RXvvO4yAd_MReRRDtQS5HEjShLmfGUa5KNCOBa1mZiuuAJO-YdCFa3b2tBWF9H1osN1N8mapBBJWB1OOkHKNGJRpbDE8fuI2RN9JcmuCfyeWEO3ZPiEajox3FArccb2lgX9mnqRZ-7-Si7niCSmxQmUAsLZfPypLzd_kIdubEi_Z55N7UhFMh7Gp"
+              alt="Leaf icon"
+              class="w-full h-full object-contain mix-blend-multiply"
+            />
+          </div>
+          <h3
+            class="text-xl font-semibold text-black mb-2"
+            data-i18n="features.organic.title"
+          ></h3>
+          <p
+            class="text-gray-800 text-sm leading-relaxed text-center"
+            data-i18n="features.organic.desc"
+          ></p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="flex flex-col items-center fade-in feature-card" data-feature="3">
+          <div class="w-16 h-16 mb-4 text-black">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVbfUOmSBxbRcGFzYSMZgTxco3_cEQ_ZylA_7uufWBh5JNLS5WnyxNtelVNoVDvBx830odBwu6TEkVkgqf-6Z4whw6Y0uRWt5cAQe53OOPQVqhZxIpGW_HFN6PlndghDfplvvLSibv2yuCclpbRkQrZDMC9-qfQh0JYPECETWDbCX1hHNdNW5TU0LqIk8Zn-sDPyer0gWVR-glcK4_jr1_2ZXhug4alGiNlgJPelPfQ-nhkCHmke_ExUQJGJ3KzYxXHfBpZo9iEfQ_"
+              alt="Clock icon"
+              class="w-full h-full object-contain mix-blend-multiply"
+            />
+          </div>
+          <h3
+            class="text-xl font-semibold text-black mb-2"
+            data-i18n="features.ripeness.title"
+          ></h3>
+          <p
+            class="text-gray-800 text-sm leading-relaxed text-center"
+            data-i18n="features.ripeness.desc"
+          ></p>
+        </div>
+      </section>
+      <!-- END: Features Section -->
+    </main>
+    <!-- END: Main Content -->
+
+    <!-- BEGIN: JavaScript for interactivity and language support -->
+    <script src="./script.js"></script>
+    <!-- END: JavaScript -->
+  </body>
+</html>

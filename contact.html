@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+          Arial, sans-serif;
+        background-color: #ffffff;
+      }
+      .nav-link {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #000;
+      }
+      .feature-card {
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+      }
+      .feature-card:hover img {
+        transform: scale(1.1);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .lang-toggle {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body class="antialiased text-gray-900 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-12 space-x-4 md:space-x-6">
+          <a href="index.html" class="text-gray-800 hover:text-black flex items-center flex-shrink-0" aria-label="Zhouzhi Kiwi home">
+            <img src="assets/zhouzhi-kiwi-logo.svg" alt="周至猕猴桃" class="h-8 w-auto" />
+          </a>
+          <a href="nutrition.html" class="nav-link hidden md:inline-block" data-i18n="nav.nutrition"></a>
+          <a href="benefits.html" class="nav-link hidden md:inline-block" data-i18n="nav.benefits"></a>
+          <a href="products.html" class="nav-link hidden md:inline-block" data-i18n="nav.products"></a>
+          <a href="recipes.html" class="nav-link hidden md:inline-block" data-i18n="nav.recipes"></a>
+          <a href="sustainability.html" class="nav-link hidden md:inline-block" data-i18n="nav.sustainability"></a>
+          <a href="about.html" class="nav-link hidden md:inline-block" data-i18n="nav.about"></a>
+          <a href="contact.html" class="nav-link hidden md:inline-block" data-i18n="nav.contact"></a>
+          <a href="community.html" class="nav-link hidden md:inline-block" data-i18n="nav.community"></a>
+          <a href="support.html" class="nav-link hidden md:inline-block" data-i18n="nav.support"></a>
+          <button id="lang-toggle" class="nav-link lang-toggle px-2 py-1 border rounded text-sm"></button>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <section class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black mb-4 fade-in" data-i18n="contact.hero.title"></h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto fade-in" data-i18n="contact.hero.subtitle"></p>
+      </section>
+      <!-- Contact Details -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="col-span-1 space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-black" data-i18n="contact.phone.label"></h3>
+              <p class="text-gray-800" data-i18n="contact.phone.value"></p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black" data-i18n="contact.email.label"></h3>
+              <p class="text-gray-800" data-i18n="contact.email.value"></p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black" data-i18n="contact.address.label"></h3>
+              <p class="text-gray-800" data-i18n="contact.address.value"></p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black" data-i18n="contact.hours.label"></h3>
+              <p class="text-gray-800" data-i18n="contact.hours.value"></p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black" data-i18n="contact.wechat.label"></h3>
+              <div class="mt-2 w-32 h-32 rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 flex items-center justify-center text-center text-xs text-gray-500" data-i18n="contact.wechat.value"></div>
+            </div>
+          </div>
+          <div class="col-span-1 md:col-span-2 flex flex-col">
+            <h3 class="text-lg font-semibold text-black mb-2" data-i18n="contact.map.title"></h3>
+            <div id="map" class="w-full h-80 md:h-96 lg:h-[500px] rounded-lg shadow flex-grow"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+    <!-- Amap JS API. Replace YOUR_API_KEY with a valid Amap key to display the map -->
+    <!-- Leaflet CSS & JS for interactive map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        // 周至县坐标
+        var lat = 34.1603;
+        var lng = 108.2176;
+        var map = L.map('map').setView([lat, lng], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([lat, lng])
+          .addTo(map)
+          .bindPopup('Our Orchard Location')
+          .openPopup();
+      });
+    </script>
+  </body>
+</html>

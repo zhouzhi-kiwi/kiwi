@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+          Arial, sans-serif;
+        background-color: #ffffff;
+      }
+      .nav-link {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #000;
+      }
+      .feature-card {
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+      }
+      .feature-card:hover img {
+        transform: scale(1.1);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .lang-toggle {
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body class="antialiased text-gray-900 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center h-12 space-x-4 md:space-x-6">
+          <a href="index.html" class="text-gray-800 hover:text-black flex items-center flex-shrink-0" aria-label="Zhouzhi Kiwi home">
+            <img src="assets/zhouzhi-kiwi-logo.svg" alt="周至猕猴桃" class="h-8 w-auto" />
+          </a>
+          <a href="nutrition.html" class="nav-link hidden md:inline-block" data-i18n="nav.nutrition"></a>
+          <a href="benefits.html" class="nav-link hidden md:inline-block" data-i18n="nav.benefits"></a>
+          <a href="products.html" class="nav-link hidden md:inline-block" data-i18n="nav.products"></a>
+          <a href="recipes.html" class="nav-link hidden md:inline-block" data-i18n="nav.recipes"></a>
+          <a href="sustainability.html" class="nav-link hidden md:inline-block" data-i18n="nav.sustainability"></a>
+          <a href="about.html" class="nav-link hidden md:inline-block" data-i18n="nav.about"></a>
+          <a href="contact.html" class="nav-link hidden md:inline-block" data-i18n="nav.contact"></a>
+          <a href="community.html" class="nav-link hidden md:inline-block" data-i18n="nav.community"></a>
+          <a href="support.html" class="nav-link hidden md:inline-block" data-i18n="nav.support"></a>
+          <button id="lang-toggle" class="nav-link lang-toggle px-2 py-1 border rounded text-sm"></button>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <section class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-black mb-4 fade-in" data-i18n="about.hero.title"></h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto fade-in" data-i18n="about.hero.subtitle"></p>
+      </section>
+      <!-- Orchard Section -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 fade-in">
+        <img src="https://images.pexels.com/photos/33782373/pexels-photo-33782373.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fuzzy brown kiwifruit growing on the vine" class="w-full h-64 md:h-80 object-cover rounded-lg mb-8" />
+        <h2 class="text-2xl sm:text-3xl font-semibold text-black mb-4" data-i18n="about.orchard.title"></h2>
+        <p class="text-gray-800 text-sm leading-relaxed mb-4" data-i18n="about.orchard.desc1"></p>
+        <p class="text-gray-800 text-sm leading-relaxed" data-i18n="about.orchard.desc2"></p>
+      </section>
+      <!-- Cultivation Process Section -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 fade-in">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-black mb-4" data-i18n="about.process.title"></h2>
+        <ul class="list-disc list-inside text-gray-800 text-sm space-y-2">
+          <li data-i18n="about.process.item1"></li>
+          <li data-i18n="about.process.item2"></li>
+          <li data-i18n="about.process.item3"></li>
+          <li data-i18n="about.process.item4"></li>
+          <li data-i18n="about.process.item5"></li>
+          <li data-i18n="about.process.item6"></li>
+          <li data-i18n="about.process.item7"></li>
+          <li data-i18n="about.process.item8"></li>
+        </ul>
+      </section>
+      <!-- Team Section -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 fade-in">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-black mb-4" data-i18n="about.team.title"></h2>
+        <p class="text-gray-800 text-sm leading-relaxed mb-4" data-i18n="about.team.desc1"></p>
+        <p class="text-gray-800 text-sm leading-relaxed" data-i18n="about.team.desc2"></p>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
