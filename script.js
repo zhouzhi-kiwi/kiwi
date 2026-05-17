@@ -441,8 +441,58 @@ function toggleLanguage() {
   applyTranslations();
 }
 
+function setupMobileNavigation() {
+  const navRow = document.querySelector('nav > div > div');
+  const langToggle = document.getElementById('lang-toggle');
+  if (!navRow || !langToggle || navRow.querySelector('.mobile-menu-toggle')) return;
+
+  const menuButton = document.createElement('button');
+  menuButton.type = 'button';
+  menuButton.className = 'mobile-menu-toggle';
+  menuButton.setAttribute('aria-label', currentLang === 'zh' ? '打开导航菜单' : 'Open navigation menu');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.textContent = '≡';
+
+  const menuPanel = document.createElement('div');
+  menuPanel.className = 'mobile-menu-panel';
+  menuPanel.setAttribute('aria-label', currentLang === 'zh' ? '移动端导航' : 'Mobile navigation');
+
+  navRow.querySelectorAll('a.nav-link:not(.lang-toggle)').forEach((link) => {
+    const clone = link.cloneNode(true);
+    clone.classList.remove('hidden', 'md:inline-block');
+    clone.addEventListener('click', () => {
+      menuPanel.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    });
+    menuPanel.appendChild(clone);
+  });
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuPanel.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!navRow.contains(event.target)) {
+      menuPanel.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      menuPanel.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  navRow.insertBefore(menuButton, langToggle);
+  navRow.appendChild(menuPanel);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   applyTranslations();
+  setupMobileNavigation();
 
   const toggleBtn = document.getElementById('lang-toggle');
   if (toggleBtn) toggleBtn.addEventListener('click', toggleLanguage);

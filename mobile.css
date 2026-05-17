@@ -1,0 +1,213 @@
+@media (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: sticky;
+  }
+
+  nav > div {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  nav > div > div {
+    position: relative;
+    height: auto !important;
+    min-height: 58px;
+    justify-content: flex-start !important;
+    gap: 10px 14px;
+    padding: 10px 0 12px;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+  }
+
+  nav a[aria-label] img {
+    height: 30px !important;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    display: none !important;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 9px;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    background: #fff;
+    color: #111827;
+    font-size: 13px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    color: #111827;
+  }
+
+  .lang-toggle {
+    display: inline-flex !important;
+    margin-left: 0 !important;
+    border-color: #111827 !important;
+    font-weight: 600;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+    border: 1px solid #d1d5db;
+    border-radius: 999px;
+    background: #fff;
+    color: #111827;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .mobile-menu-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+  }
+
+  .mobile-menu-panel.is-open {
+    display: grid;
+  }
+
+  .mobile-menu-panel .nav-link {
+    display: inline-flex !important;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 13px;
+  }
+
+  main > section:first-child {
+    padding-top: 42px !important;
+    padding-bottom: 26px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 12vw, 4.1rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+  }
+
+  h3 {
+    font-size: 1.08rem !important;
+    line-height: 1.25 !important;
+  }
+
+  p,
+  li,
+  td,
+  th {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+
+  main > section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
+    max-width: 100% !important;
+  }
+
+  .grid {
+    gap: 24px !important;
+  }
+
+  .feature-card {
+    padding: 4px 8px;
+  }
+
+  .feature-card:hover {
+    transform: none;
+  }
+
+  section:has(img[alt="Realistic green kiwifruit cross section"]) {
+    margin-bottom: 54px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  img[alt="Realistic green kiwifruit cross section"] {
+    object-position: center top;
+  }
+
+  section:has(img[alt="Realistic green kiwifruit cross section"]) > div {
+    height: clamp(210px, 62vw, 310px) !important;
+    width: min(100%, 430px) !important;
+    border-top-left-radius: 240px !important;
+    border-top-right-radius: 240px !important;
+  }
+
+  .flex.items-center.justify-center.space-x-6 {
+    gap: 16px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .flex.items-center.justify-center.space-x-6 > * {
+    margin-left: 0 !important;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pb-32 {
+    padding-bottom: 64px !important;
+  }
+
+  .pb-16 {
+    padding-bottom: 52px !important;
+  }
+
+  .pb-12 {
+    padding-bottom: 42px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-toggle,
+  .mobile-menu-panel {
+    display: none !important;
+  }
+
+  .nav-link {
+    border: 0;
+  }
+}
