@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" role="img" aria-labelledby="title desc">
+  <title id="title">周至猕猴桃 logo</title>
+  <desc id="desc">Illustrated Zhouzhi kiwifruit logo with kiwi, leaves, Chinese and English text.</desc>
+  <defs>
+    <linearGradient id="leafA" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7faf2f"/>
+      <stop offset="1" stop-color="#0f5b1e"/>
+    </linearGradient>
+    <linearGradient id="leafB" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1d7a2e"/>
+      <stop offset="1" stop-color="#0a3f16"/>
+    </linearGradient>
+    <linearGradient id="kiwiSkin" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#a96f24"/>
+      <stop offset="0.55" stop-color="#8b5419"/>
+      <stop offset="1" stop-color="#5d3511"/>
+    </linearGradient>
+    <linearGradient id="kiwiFlesh" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#c7e959"/>
+      <stop offset="0.55" stop-color="#8cc72d"/>
+      <stop offset="1" stop-color="#5fa31d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#133b16" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <path d="M131 33c-34-20-72-2-90 36 34 11 72-1 90-36Z" fill="url(#leafB)"/>
+    <path d="M79 63c19-2 36-11 52-30" fill="none" stroke="#9ac64a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M165 17c-35-14-67 6-76 44 34 4 64-12 76-44Z" fill="url(#leafA)"/>
+    <path d="M121 48c11-15 25-25 44-31" fill="none" stroke="#c4df63" stroke-width="3" stroke-linecap="round"/>
+    <path d="M276 26c42-14 80 10 91 55-42 3-78-17-91-55Z" fill="url(#leafB)"/>
+    <path d="M326 67c-12-17-28-30-50-41" fill="none" stroke="#d7edba" stroke-width="3" stroke-linecap="round"/>
+
+    <ellipse cx="159" cy="70" rx="47" ry="65" transform="rotate(-14 159 70)" fill="url(#kiwiSkin)"/>
+    <path d="M144 16c9 7 10 14 2 20" fill="none" stroke="#724213" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#d4aa5a" opacity="0.65">
+      <circle cx="137" cy="42" r="2"/><circle cx="151" cy="36" r="1.8"/><circle cx="166" cy="48" r="1.7"/>
+      <circle cx="124" cy="70" r="1.7"/><circle cx="154" cy="79" r="2"/><circle cx="177" cy="65" r="1.6"/>
+      <circle cx="141" cy="101" r="1.8"/><circle cx="181" cy="95" r="1.7"/>
+    </g>
+
+    <ellipse cx="244" cy="79" rx="78" ry="49" transform="rotate(-7 244 79)" fill="#fff"/>
+    <ellipse cx="244" cy="79" rx="68" ry="40" transform="rotate(-7 244 79)" fill="url(#kiwiFlesh)"/>
+    <ellipse cx="244" cy="79" rx="18" ry="13" transform="rotate(-7 244 79)" fill="#f7f5c7"/>
+    <g fill="#17250b">
+      <ellipse cx="211" cy="70" rx="2.4" ry="6" transform="rotate(-28 211 70)"/>
+      <ellipse cx="222" cy="63" rx="2.4" ry="6" transform="rotate(-18 222 63)"/>
+      <ellipse cx="236" cy="59" rx="2.4" ry="6" transform="rotate(-6 236 59)"/>
+      <ellipse cx="250" cy="59" rx="2.4" ry="6" transform="rotate(8 250 59)"/>
+      <ellipse cx="264" cy="64" rx="2.4" ry="6" transform="rotate(20 264 64)"/>
+      <ellipse cx="276" cy="73" rx="2.4" ry="6" transform="rotate(31 276 73)"/>
+      <ellipse cx="276" cy="88" rx="2.4" ry="6" transform="rotate(47 276 88)"/>
+      <ellipse cx="263" cy="96" rx="2.4" ry="6" transform="rotate(69 263 96)"/>
+      <ellipse cx="248" cy="99" rx="2.4" ry="6" transform="rotate(84 248 99)"/>
+      <ellipse cx="232" cy="97" rx="2.4" ry="6" transform="rotate(101 232 97)"/>
+      <ellipse cx="218" cy="90" rx="2.4" ry="6" transform="rotate(121 218 90)"/>
+      <ellipse cx="209" cy="81" rx="2.4" ry="6" transform="rotate(139 209 81)"/>
+    </g>
+    <g stroke="#eff8d0" stroke-width="2.2" stroke-linecap="round" opacity="0.9">
+      <path d="M230 68l-15-16"/><path d="M241 66l-2-21"/><path d="M253 68l15-17"/>
+      <path d="M257 80l24-3"/><path d="M249 91l12 18"/><path d="M235 90l-10 18"/>
+      <path d="M228 80l-22 3"/>
+    </g>
+  </g>
+
+  <text x="210" y="139" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="800" fill="#15551f" letter-spacing="2">周至猕猴桃</text>
+  <text x="210" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#15551f" letter-spacing="7">ZHOUZHI KIWI</text>
+</svg>
