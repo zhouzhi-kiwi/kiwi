@@ -177,9 +177,9 @@ const translations = {
     'contact.hero.subtitle':
       'For orders, cooperation or variety questions, contact us directly.',
     'contact.phone.label': 'Phone',
-    'contact.phone.value': '+86 189-0000-0000',
+    'contact.phone.value': '+86 181-9259-8315',
     'contact.email.label': 'Email',
-    'contact.email.value': 'info@kiwipro.cn',
+    'contact.email.value': 'm153517@icloud.com',
     'contact.address.label': 'Origin',
     'contact.address.value': 'Zhouzhi County, Xi’an, Shaanxi, China',
     'contact.hours.label': 'Service Hours',
